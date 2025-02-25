@@ -126,8 +126,9 @@ def etl_process():
                 crud.create_member(db, name=name, email=email, affiliation=affiliation, phone=phone)
     db.close()
 
-    df.to_csv("final_data.csv", index=False, encoding="utf-8-sig")
-    print("ETL 處理完成，資料已寫入資料庫並存檔至 final_data.csv")
+    os.makedirs("data", exist_ok=True)  # 確保 data 目錄存在
+    df.to_csv("data/final_data.csv", index=False, encoding="utf-8-sig")
+    print("ETL 處理完成，資料已寫入資料庫並存檔至 data/final_data.csv")
 
 if __name__ == "__main__":
     etl_process()
