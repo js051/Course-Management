@@ -34,3 +34,7 @@ Thumbs.db
 *.swo
 .idea/
 .vscode/
+
+# Possible packaging products
+dist/
+build/

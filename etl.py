@@ -72,14 +72,17 @@ def standardize_unit(unit):
     mapping = {
         "台北": "臺北",
         "台北地院": "臺北地方法院",
+        "台中": "臺中",
+        "台中地院": "臺中地方法院",
     }
     return mapping.get(unit, unit)
 
 def fuzzy_correct(unit, standard_units):
     match, score = process.extractOne(unit, standard_units)
-    if score > 90:
+    if score > 80:
         return match
     else:
+        print(f"[警告] 未匹配單位: {unit} (最佳匹配: {match}, 分數: {score})")
         return unit
 
 def etl_process():
