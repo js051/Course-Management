@@ -1,0 +1,25 @@
+course_management/
+├── app/
+│   ├── __init__.py                # 初始化模組
+│   ├── config.py                  # 集中管理配置（例如資料庫 URL、API Key、Google 憑證等）
+│   ├── database.py                # 資料庫連線與設定
+│   ├── models.py                  # 資料庫模型定義（例如 Member）
+│   ├── crud.py                    # 基本 CRUD 操作函數
+│   ├── schemas.py                 # Pydantic 模型，定義 API 輸入與輸出
+│   ├── security.py                # 安全相關設定（例如 API Key 驗證）
+│   └── routers/
+│       ├── __init__.py            # 標識 routers 為模組
+│       └── members.py             # 會員相關的 API 路由
+├── cli.py                         # 命令列介面工具（使用 Click 與 Rich）
+├── gui.py                         # 優化後的桌面 GUI（使用 PyQt5），含重新整理、搜尋與匯出功能
+├── etl.py                         # ETL 模組：從 Google Sheets 讀取資料、清洗、標準化後寫入 SQLite 資料庫
+├── requirements.txt               # 專案依賴套件清單
+├── Dockerfile                     # Docker 部署檔案（選用）
+├── .env                           # 環境變數檔案（例如 GOOGLE_CREDENTIALS）
+├── logs/                          # 日誌檔案存放目錄
+│   └── app.log                    # 日誌檔（執行時產生）
+├── data/                          # 匯出資料存放目錄
+│   └── export.csv                 # GUI 匯出 CSV 檔案
+└── tests/                         # 單元測試目錄
+    ├── __init__.py                # 標識 tests 為模組
+    └── test_members.py            # Member 模型與 CRUD 測試

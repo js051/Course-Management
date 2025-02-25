@@ -1,0 +1,36 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment folder
+.venv/
+venv/
+env/
+
+# Environment / Credentials
+.env
+credentials.json
+
+# Database files
+*.db
+
+# Output / Logs
+logs/
+app_logs/
+*.log
+data/
+*.csv
+
+# Folder exporter / temporary files
+folder_exporter/
+
+#temporary tool
+tool/
+
+# OS or Editor-specific files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
